@@ -1,0 +1,51 @@
+# M1 AI Challenge Class 2025-26 - Sample Challenge
+# Created by: Ihsan Ullah
+# Created on: Jan 13, 2026
+
+version: 2
+title: M1 AI Challenge 2025-26
+description: M1 AI Challenge class sample challenge
+image: logo.png
+registration_auto_approve: False   
+docker_image: codalab/codalab-legacy:py39
+
+terms: pages/terms.md
+# You can have multiple pages e.g. Overview, Data, Starting Kit etc.
+pages:  
+  - title: Overview
+    file: pages/overview.md
+  # - title: Data
+  #   file: pages/data.md
+  
+# You can have multiple phases
+phases:
+  - index: 0
+    name: Phase 1
+    description: Feedback Phase
+    start: 2026-01-01 # YYYY-MM-DD
+    end: 2026-02-01 # YYYY-MM-DD
+    tasks:
+      - 0
+
+# scoring_program is required
+# input_data, reference_data, ingestion_program are optional
+tasks:
+  - index: 0
+    name: Sample Task
+    description: Sample Task Description
+    input_data: input_data/
+    reference_data: reference_data/  
+    scoring_program: scoring_program/
+    ingestion_program: ingestion_program/
+
+
+leaderboards:
+  - index: 0 
+    title: Results
+    key: main_leaderboard
+    submission_rule: "Force_Latest_Multiple" # This can be changed, see the leaderboard rules here: https://docs.codabench.org/latest/Organizers/Benchmark_Creation/Leaderboard-Functionality/#submission-rules
+    # you can add multiple columns if you have multiple scores
+    columns:
+      - index: 0
+        title: Score
+        key: score
