@@ -1,0 +1,2 @@
+# Input Data
+Input Data consists of Train Data, Train Labels, and Test Data. Test Labels are not included here. Input Data is accessed by ingestion program to do some training, produce predictions and save them.
