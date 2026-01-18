@@ -10,7 +10,8 @@
 # ----------------------------------------
 # Imports
 # ----------------------------------------
-
+import sklearn as sk
+from sklearn import linear_model
 
 # ----------------------------------------
 # Model Class
@@ -31,7 +32,7 @@ class Model:
         """
         print("[*] - Initializing Classifier")
         # TODO: complete this
-        self.clf = sk.linear_model.SGDClassifier(
+        self.clf = linear_model.SGDClassifier(
     	loss="log_loss",
     	max_iter=10,
     	n_jobs=1

@@ -9,6 +9,7 @@ import os
 # Directories
 # ------------------------------------------
 module_dir = os.path.dirname(os.path.realpath(__file__))
+print(module_dir)
 root_dir_name = os.path.dirname(module_dir)
 
 # ------------------------------------------
