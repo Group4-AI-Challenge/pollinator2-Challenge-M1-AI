@@ -50,6 +50,10 @@ if __name__ == "__main__":
     sys.path.append(reference_dir)
     sys.path.append(output_dir)
 
+    print(prediction_dir)
+    for file in os.listdir(prediction_dir):
+        print(file)
+
     from score import Scoring
 
     # Initialize Scoring program
