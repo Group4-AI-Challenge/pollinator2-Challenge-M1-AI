@@ -31,7 +31,12 @@ class Model:
         """
         print("[*] - Initializing Classifier")
         # TODO: complete this
-        self.clf = None
+        self.clf = sk.linear_model.SGDClassifier(
+    	loss="log_loss",
+    	max_iter=10,
+    	n_jobs=1
+	)
+        
 
     def fit(self, train_data):
         """
@@ -49,6 +54,9 @@ class Model:
 
         print("[*] - Training Classifier on the train set")
         # TODO: complete this
+        X = train_data["X_train"]
+        y = train_data["y_train"]
+        self.clf.fit(X, y)
 
     def predict(self, test_data):
 
@@ -68,5 +76,5 @@ class Model:
 
         print("[*] - Predicting test set using trained Classifier")
         # TODO: complete this
-        # y = self.clf.predict()
-        # return y
+        y = self.clf.predict(test_data["X_test"])
+        return y
