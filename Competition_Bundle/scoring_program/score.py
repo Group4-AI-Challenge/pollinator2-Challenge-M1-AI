@@ -4,6 +4,8 @@
 import os
 import json
 from datetime import datetime as dt
+import numpy as np
+import sklearn as sk
 
 
 class Scoring:
@@ -54,8 +56,8 @@ class Scoring:
         """
         print("[*] Reading reference data")
         # TODO: Load reference data here
-        reference_data_file = os.path.join(reference_dir, "SOME_FILE_NAME")
-        self.reference_data = None
+        reference_data_file = os.path.join(reference_dir, "y_test.json")
+        self.reference_data = json.load(reference_data_file)
 
     def load_ingestion_result(self, predictions_dir):
         """
@@ -68,18 +70,19 @@ class Scoring:
 
         # TODO: Load ingestion result here
         ingestion_result_file = os.path.join(predictions_dir, "result.json")
-        self.ingestion_result = None
+        self.ingestion_result = json.load(ingestion_result_file) # we assume ingestion result is stored as a json file
 
     def compute_scores(self):
         """
-        Compute the scores for the competition.
+        Compute the scores for the competition. We use micro to account for 
+        class imbalance (essentially the same as accuracy)
 
         """
         print("[*] Computing scores")
-
+        score = sk.metrics.f1_score(self.reference_data, 
+                                    self.ingestion_result, average='micro')
         # TODO: Compute scores here
-
-        self.scores_dict = {}
+        self.scores_dict = {'score': score}
 
     def write_scores(self, output_dir):
 
