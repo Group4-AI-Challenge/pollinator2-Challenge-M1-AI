@@ -55,9 +55,13 @@ class Scoring:
             reference_dir (str): The reference data directory name.
         """
         print("[*] Reading reference data")
+        # print(reference_dir)
         # TODO: Load reference data here
         reference_data_file = os.path.join(reference_dir, "y_test.json")
-        self.reference_data = json.load(reference_data_file)
+        print(reference_data_file)
+        with open(reference_data_file, "r") as f:
+            self.reference_data = json.load(f)
+        # self.reference_data = json.load(reference_data_file)
 
     def load_ingestion_result(self, predictions_dir):
         """
@@ -70,7 +74,9 @@ class Scoring:
 
         # TODO: Load ingestion result here
         ingestion_result_file = os.path.join(predictions_dir, "result.json")
-        self.ingestion_result = json.load(ingestion_result_file) # we assume ingestion result is stored as a json file
+        with open(ingestion_result_file, "r") as f:
+            self.ingestion_result = json.load(f)
+        # self.ingestion_result = json.load(ingestion_result_file) # we assume ingestion result is stored as a json file
 
     def compute_scores(self):
         """
@@ -79,14 +85,17 @@ class Scoring:
 
         """
         print("[*] Computing scores")
-        score = sk.metrics.f1_score(self.reference_data, 
-                                    self.ingestion_result, average='micro')
+        print(len(self.ingestion_result['predictions']))
+        print(len(self.reference_data['y_test']))
+        score = sk.metrics.f1_score(self.reference_data['y_test'], 
+                                    self.ingestion_result['predictions'], average='micro')
         # TODO: Compute scores here
         self.scores_dict = {'score': score}
 
     def write_scores(self, output_dir):
 
         print("[*] Writing scores")
+        os.makedirs(output_dir, exist_ok=True)
         score_file = os.path.join(output_dir, "scores.json")
         with open(score_file, "w") as f_score:
             f_score.write(json.dumps(self.scores_dict, indent=4))
