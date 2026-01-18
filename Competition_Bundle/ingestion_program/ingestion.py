@@ -4,7 +4,10 @@
 import os
 import json
 from datetime import datetime as dt
+import numpy as np
 
+def load_npy(file_dir, file_name):
+    return np.load(os.path.join(file_dir, file_name))
 
 class Ingestion:
     """
@@ -84,7 +87,18 @@ class Ingestion:
         """
         print("[*] Loading Train data")
 
+
         # TODO: Load train and/or test data here
+        tr_data_file = "X_train.npy"
+        tr_labels_file = "y_train.npy"
+        test_data_file = "X_test.npy"
+
+        self.train_data ={ 
+            'X_train': load_npy(input_dir, tr_data_file), 
+            'y_train': load_npy(input_dir, tr_labels_file)
+        }
+        # self.train_data = load_npy(input_dir, tr_labels_file)
+        self.test_data = {'X_test': load_npy(input_dir, test_data_file)}
 
     def init_submission(self, Model):
         """
@@ -95,7 +109,7 @@ class Ingestion:
         """
         print("[*] Initializing Submmited Model")
         # TODO: initialize your model here
-        # self.model = Model()
+        self.model = Model()
 
     def fit_submission(self):
         """
@@ -103,7 +117,7 @@ class Ingestion:
         """
         print("[*] Fitting Submmited Model")
         # TODO: call the fit method of your submitted model
-        # self.model.fit(self.train_data)
+        self.model.fit(self.train_data)
         # self.model.fit()
 
     def predict_submission(self):
@@ -113,7 +127,7 @@ class Ingestion:
         print("[*] Calling predict method of submitted model")
 
         # TODO: Save the output from the model predict method. You can use this later in compute_result function
-        _ = self.model.predict(self.test_data)
+        self.y_test = self.model.predict(self.test_data['X_test'])
 
     def compute_result(self):
         """
@@ -125,7 +139,9 @@ class Ingestion:
         # You can save the result in a dictionary to be saved as json file by save_result function
 
         # TODO: Modify below to set the result dict
-        self.ingestion_result = {}
+        self.ingestion_result = {
+            "predictions": self.y_test
+        }
 
     def save_result(self, output_dir=None):
         """
@@ -135,5 +151,6 @@ class Ingestion:
             output_dir (str): The output directory to save the result files.
         """
         result_file = os.path.join(output_dir, "result.json")
+        os.makedirs(output_dir, exist_ok=True)
         with open(result_file, "w") as f:
             f.write(json.dumps(self.ingestion_result, indent=4))
