@@ -1,0 +1,11 @@
+.DS_Store
+.DS_Store?
+._*
+__pycache__
+
+
+
+*.npy
+*.npz
+
+Competition_Bundle/input_data/X_test.npy

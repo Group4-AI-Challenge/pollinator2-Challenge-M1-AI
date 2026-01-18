@@ -1,0 +1,17 @@
+{
+  "neg": 0,
+  "Fourmis": 1,
+  "Coleoptere": 2,
+  "Petite abeille sauvage": 3,
+  "Syrphe": 4,
+  "Chenille": 5,
+  "Autre": 6,
+  "Diptere": 7,
+  "Lepidoptere": 8,
+  "Apis_mellifera": 9,
+  "Bourdon": 10,
+  "Puceron": 11,
+  "Opilion": 12,
+  "Grande_abeille_sauvage": 13,
+  "OOD": 14
+}

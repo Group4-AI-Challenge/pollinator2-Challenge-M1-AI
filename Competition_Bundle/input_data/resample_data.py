@@ -4,20 +4,12 @@ from sklearn.model_selection import train_test_split
 import json
 
 
-X_path = "X.npy"
-y_path = "y.npy"
 
-
-
-
+X_path = os.path.join(os.path.dirname(__file__), "X.npy")
+y_path = os.path.join(os.path.dirname(__file__), "y.npz")
 
 X = np.load(X_path)
-y = np.load(y_path)
-
-
-
-
-
+y = np.load(y_path)['y']
 
 
 y = y.astype(int)
@@ -28,19 +20,15 @@ test_size = 0.2
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
 
 
-
-
-
-
 # Saving the test in the json
 data = {
     "y_test" : y_test.tolist()
 }
 
-with open("y_test.json", "w") as f:
+with open(os.path.join(os.path.dirname(__file__),  "y_test.json"), "w") as f:
     json.dump(data, f)
 
-np.save("X_test.npy", X_test)
+np.save(os.path.join(os.path.dirname(__file__),  "X_test.npy"), X_test)
 
 
 print("--"*20)
@@ -117,8 +105,8 @@ train_data = {
 with open("y_test.json", "w") as f:
     json.dump(data, f)
 
-np.save("X_train.npy", X_train_resampled)
-np.save("y_train.npy", y_train_resampled)
+np.save(os.path.join(os.path.dirname(__file__), "X_train.npy"), X_train_resampled)
+np.save(os.path.join(os.path.dirname(__file__), "y_train.npy"), y_train_resampled)
 
 # np.save("y_test.npy", y_test)
 
