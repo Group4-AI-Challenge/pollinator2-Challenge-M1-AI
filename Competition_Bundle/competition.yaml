@@ -3,8 +3,8 @@
 # Created on: Jan 13, 2026
 
 version: 2
-title: M1 AI Challenge 2025-26
-description: M1 AI Challenge class sample challenge
+title: M1 AI Challenge 2025-26: Pollinator classification
+description: M1 AI Challenge pollinator classification. Participants submit a model implementation that is trained on provided data and evaluated using micto-F1 score.
 image: logo.png
 registration_auto_approve: False   
 docker_image: codalab/codalab-legacy:py39
@@ -31,8 +31,8 @@ phases:
 # input_data, reference_data, ingestion_program are optional
 tasks:
   - index: 0
-    name: Sample Task
-    description: Sample Task Description
+    name: Classification Task
+    description: Train a classifier on the provided training data and predict labels for the test set. The submission must implement a Model class with fit and predict methods.
     input_data: input_data/
     reference_data: reference_data/  
     scoring_program: scoring_program/
@@ -47,5 +47,7 @@ leaderboards:
     # you can add multiple columns if you have multiple scores
     columns:
       - index: 0
-        title: Score
+        title: Micro F1 Score
         key: score
+        ordering: desc
+        precision: 4
