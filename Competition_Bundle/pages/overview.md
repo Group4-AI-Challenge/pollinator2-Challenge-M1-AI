@@ -10,7 +10,7 @@ Understanding pollinator activity is vital for biodiversity research and global 
 
 ## Competition Tasks
 ***
-Implement your idea for the model to maximize the score. 
+Just one task will be used in the challenge. By submitting the model, it will be loaded by the ingestion.py and evaluated by the scoring.py functions. 
 
 ## Competition Phases
 ***
@@ -20,9 +20,8 @@ There is just one phase. The train data and train labels. You will be evaluated 
 ## How to join this competition?
 ***
 - Login or Create Account on [<ins>Codabench</ins>](https://www.codabench.org/)
-- 
-- Go to the `Starting Kit` tab
-- Download the `Dummy Sample Submission`
+- Download the `....`
+- Using 'python3 utilities/compile_bundle.py', get a zip file
 - Go to the `My Submissions` tab
 - Register in the Competition
 - Submit the downloaded file
