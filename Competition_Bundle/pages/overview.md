@@ -14,12 +14,13 @@ Implement your idea for the model to maximize the score.
 
 ## Competition Phases
 ***
-
+There is just one phase. The train data and train labels. You will be evaluated on the test data. 
 
 
 ## How to join this competition?
 ***
-- Login or Create Account on [<ins>Codabench</ins>](https://www.codabench.org/) 
+- Login or Create Account on [<ins>Codabench</ins>](https://www.codabench.org/)
+- 
 - Go to the `Starting Kit` tab
 - Download the `Dummy Sample Submission`
 - Go to the `My Submissions` tab
@@ -34,15 +35,15 @@ This competition allows only result submissions. Participants can submit a resul
 
 ## Timeline
 ***
-...
+Until April.
 
 
 ## Credits
 ***
-...
-
+No credits are awarded for completing the challenge. 
 
 
 ## Contact
 ***
-...
+marina.hornero-merino@universite-paris-saclay.fr
+
