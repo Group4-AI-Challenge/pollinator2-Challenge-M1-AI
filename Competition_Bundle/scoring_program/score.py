@@ -6,6 +6,7 @@ import json
 from datetime import datetime as dt
 import numpy as np
 import sklearn as sk
+from sklearn import metrics
 
 
 class Scoring:
@@ -87,7 +88,7 @@ class Scoring:
         print("[*] Computing scores")
         print(len(self.ingestion_result['predictions']))
         print(len(self.reference_data['y_test']))
-        score = sk.metrics.f1_score(self.reference_data['y_test'], 
+        score = metrics.f1_score(self.reference_data['y_test'], 
                                     self.ingestion_result['predictions'], average='micro')
         # TODO: Compute scores here
         self.scores_dict = {'score': score}
