@@ -58,7 +58,9 @@ class Scoring:
         print("[*] Reading reference data")
         # print(reference_dir)
         # TODO: Load reference data here
+
         reference_data_file = os.path.join(reference_dir, "y_test.json")
+        print(reference_dir)
         print(reference_data_file)
         with open(reference_data_file, "r") as f:
             self.reference_data = json.load(f)
@@ -75,6 +77,7 @@ class Scoring:
 
         # TODO: Load ingestion result here
         ingestion_result_file = os.path.join(predictions_dir, "result.json")
+        print(ingestion_result_file)
         with open(ingestion_result_file, "r") as f:
             self.ingestion_result = json.load(f)
         # self.ingestion_result = json.load(ingestion_result_file) # we assume ingestion result is stored as a json file

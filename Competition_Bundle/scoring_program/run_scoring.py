@@ -42,17 +42,21 @@ if __name__ == "__main__":
         output_dir = os.path.join(root_dir_name, "scoring_output")
     else:
         # DO NOT CHANGE THESE PATHS. THESE ARE USED ON THE CODABENCH PLATFORM
+        
         prediction_dir = "/app/input/res"
         reference_dir = "/app/input/ref"
         output_dir = "/app/output"
+
+        
 
     sys.path.append(prediction_dir)
     sys.path.append(reference_dir)
     sys.path.append(output_dir)
 
     print(prediction_dir)
-    for file in os.listdir(prediction_dir):
-        print(file)
+    print(os.path.abspath(__file__))
+    #for file in os.listdir(prediction_dir):
+        #print(file)
 
     from score import Scoring
 
