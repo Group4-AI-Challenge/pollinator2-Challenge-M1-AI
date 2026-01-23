@@ -12,7 +12,8 @@ HORNERO MERINO Marina (group leader)\
 CHOJNACKA Dominika\
 LEONARDI Raphael\
 CARKA Krisa \
-EL OTMANI Youssef
+EL OTMANI Youssef \
+Contact: marina.hornero-merino@universite-paris-saclay.fr
 
 
 ## How to execute the files
