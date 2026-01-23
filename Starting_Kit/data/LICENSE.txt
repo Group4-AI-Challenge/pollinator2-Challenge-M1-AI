@@ -1,0 +1,72 @@
+## M1 AI Challenge Creation Class Dataset License (2026)
+
+### 1. Purpose and Scope
+
+This dataset is provided exclusively for educational use within the **M1 AI Challenge Creation class (2025)** at **Université Paris-Saclay**, specifically for the purpose of **creating AI challenges on the Codabench platform**.
+
+No other use is permitted.
+
+---
+
+### 2. Permitted Use
+
+You are permitted to:
+
+* Access and use the dataset **solely for private, non-commercial educational purposes**
+* Use the dataset **only within the context of the M1 AI Challenge Creation class (2026)**
+* Process, analyze, and transform the datasets **only as required to create a challenge on the Codabench platform**
+* Store the dataset **temporarily** for the duration of the course activities
+
+---
+
+### 3. Prohibited Use
+
+You are strictly prohibited from:
+
+* Distributing, sharing, publishing, or sublicensing the dataset or any part of it
+* Making the dataset publicly available in any form
+* Using the dataset for research publications, commercial activities, or other courses
+* Using the dataset outside the Codabench challenge creation context
+* Retaining copies of the dataset after the permitted usage period
+
+This includes but is not limited to sharing via repositories, cloud storage, messaging platforms, or external collaborators.
+
+---
+
+### 4. Data Retention and Destruction
+
+All copies of the dataset, including derived files that allow reconstruction of the original data, **must be permanently deleted** once they are no longer required for the intended purpose.
+
+Specifically, the dataset must be destroyed:
+
+* At the end of the M1 AI Challenge Creation class (2026), or
+* Immediately after the challenge creation activity is completed
+
+---
+
+### 5. Ownership and Rights
+
+The dataset remain the intellectual property of its original creators and or providers.
+
+This license does not grant any ownership rights. It only grants a **temporary, limited, and revocable permission to use** the dataset under the conditions stated above.
+
+---
+
+### 6. No Warranty
+
+The dataset is provided "as is", without any warranty of any kind, express or implied, including but not limited to accuracy, completeness, or fitness for a particular purpose.
+
+---
+
+### 7. Acceptance of Terms
+
+By accessing or using this dataset, you acknowledge that you have read, understood, and agreed to comply with the terms of this license.
+
+
+---
+
+### 8. Contact
+
+For questions regarding this license or permitted use, please contact the course instructors.
+
+---
