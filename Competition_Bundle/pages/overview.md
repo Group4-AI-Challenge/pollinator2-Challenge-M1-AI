@@ -6,24 +6,22 @@ Here you can describe in detail what your challenge is and give all the details 
 
 
 ## Introduction
-***
-...
+Understanding pollinator activity is vital for biodiversity research and global food security, yet manual observation from field recordings is slow and impractical at scale. In this project, we use a large set of labeled images extracted from videos of flowers to train a machine-learning model that classifies the type of pollinator in case of a visit. The data might contain images without insects, visual conditions vary strongly across recordings, and the same scene can look very different depending on the camera angle. A key objective is therefore not only accurate classification, but also strong generalization, testing whether a model trained on one viewpoint can successfully recognize pollinators from another. In this project, we focus on the lack of misclassifications. Correctly identifying the pollinator species is important because different insects play different roles in ecosystems. Misclassifying them can lead to incorrect conclusions about species-specific behavior, interactions, and their contribution to pollination.
 
 ## Competition Tasks
 ***
-...
+Just one task will be used in the challenge. By submitting the model, it will be loaded by the ingestion.py and evaluated by the scoring.py functions. 
 
 ## Competition Phases
 ***
-...
-
+There is just one phase. The train data and train labels. You will be evaluated on the test data. 
 
 
 ## How to join this competition?
 ***
-- Login or Create Account on [<ins>Codabench</ins>](https://www.codabench.org/) 
-- Go to the `Starting Kit` tab
-- Download the `Dummy Sample Submission`
+- Login or Create Account on [<ins>Codabench</ins>](https://www.codabench.org/)
+- Download the `....`
+- Using 'python3 utilities/compile_bundle.py', get a zip file
 - Go to the `My Submissions` tab
 - Register in the Competition
 - Submit the downloaded file
@@ -36,15 +34,15 @@ This competition allows only result submissions. Participants can submit a resul
 
 ## Timeline
 ***
-...
+Until April.
 
 
 ## Credits
 ***
-...
-
+No credits are awarded for completing the challenge. 
 
 
 ## Contact
 ***
-...
+marina.hornero-merino@universite-paris-saclay.fr
+
