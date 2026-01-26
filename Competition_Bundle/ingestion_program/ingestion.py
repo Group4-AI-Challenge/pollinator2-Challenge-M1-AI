@@ -127,7 +127,7 @@ class Ingestion:
         print("[*] Calling predict method of submitted model")
 
         # TODO: Save the output from the model predict method. You can use this later in compute_result function
-        self.y_test = self.model.predict(self.test_data)
+        self.y_test = self.model.predict(self.test_data['X_test'])
 
     def compute_result(self):
         """
