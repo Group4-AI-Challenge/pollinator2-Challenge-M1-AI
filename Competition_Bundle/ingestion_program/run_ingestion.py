@@ -45,10 +45,37 @@ if __name__ == "__main__":
         submission_dir = os.path.join(root_dir_name, "sample_code_submission")
     else:
         # DO NOT CHANGE THESE PATHS. THESE ARE USED ON THE CODABENCH PLATFORM
-        input_dir = "/app/data"
+        input_dir = "/app/input_data"
         output_dir = "/app/output"
         program_dir = "/app/program"
-        submission_dir = "/app/ingested_program"
+        submission_dir = "/app/output/sample_code_submission"
+        
+    def print_project_structure(path, indent=0):
+        # Check if the provided path exists
+        if not os.path.exists(path):
+            print(f"Path '{path}' does not exist.")
+            return
+
+        # Loop through the items in the directory
+        for item in os.listdir(path):
+            # Create an indented representation
+            print(' ' * indent + '|-- ' + item)
+            item_path = os.path.join(path, item)
+
+            # If it's a directory, recurse deeper
+            if os.path.isdir(item_path):
+                print_project_structure(item_path, indent + 4)
+
+    # Change 'your_project_path' to the path of your project directory
+    print_project_structure('/app')
+
+    
+        # Debugging: Print exactly what is in the directories
+    print(f"Checking submission_dir: {submission_dir}")
+    if os.path.exists(submission_dir):
+        print(f"Contents: {os.listdir(submission_dir)}")
+    else:
+        print("submission_dir NOT FOUND")
 
     sys.path.append(input_dir)
     sys.path.append(output_dir)
@@ -57,8 +84,10 @@ if __name__ == "__main__":
 
 
     print(submission_dir)
-    for file in os.listdir(submission_dir):
-        print(file)
+
+    print(os.path.abspath(__file__))
+    #for file in os.listdir(submission_dir):
+        #print(file)
     # Import model from submission dir
     from model import Model
 

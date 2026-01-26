@@ -6,6 +6,7 @@ import json
 from datetime import datetime as dt
 import numpy as np
 import sklearn as sk
+from sklearn import metrics
 
 
 class Scoring:
@@ -57,7 +58,9 @@ class Scoring:
         print("[*] Reading reference data")
         # print(reference_dir)
         # TODO: Load reference data here
+
         reference_data_file = os.path.join(reference_dir, "y_test.json")
+        print(reference_dir)
         print(reference_data_file)
         with open(reference_data_file, "r") as f:
             self.reference_data = json.load(f)
@@ -74,6 +77,7 @@ class Scoring:
 
         # TODO: Load ingestion result here
         ingestion_result_file = os.path.join(predictions_dir, "result.json")
+        print(ingestion_result_file)
         with open(ingestion_result_file, "r") as f:
             self.ingestion_result = json.load(f)
         # self.ingestion_result = json.load(ingestion_result_file) # we assume ingestion result is stored as a json file
@@ -87,7 +91,7 @@ class Scoring:
         print("[*] Computing scores")
         print(len(self.ingestion_result['predictions']))
         print(len(self.reference_data['y_test']))
-        score = sk.metrics.f1_score(self.reference_data['y_test'], 
+        score = metrics.f1_score(self.reference_data['y_test'], 
                                     self.ingestion_result['predictions'], average='micro')
         # TODO: Compute scores here
         self.scores_dict = {'score': score}
