@@ -39,7 +39,25 @@ Until April.
 
 ## Credits
 ***
-No credits are awarded for completing the challenge. 
+## Credits
+***
+#### Challenge development: 
+
+Dominika Chojnacka, Université Paris-Saclay (France)
+
+Raphael Leonardi, Université Paris-Saclay (France)
+
+Youssef El Otmani, Université Paris-Saclay (France)
+
+Marina Hornero Merino, Université Paris-Saclay (France)
+
+Krisa Carka, Université Paris-Saclay (France)
+
+#### Mentoring: 
+
+Khuong Thanh Gia Hieu, Université Paris-Saclay (France), 
+
+Ihsan Ullah
 
 
 ## Contact
