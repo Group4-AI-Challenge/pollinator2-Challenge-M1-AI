@@ -34,8 +34,6 @@ Until April.
 
 ## Credits
 ***
-## Credits
-***
 #### Challenge development: 
 
 Dominika Chojnacka, Université Paris-Saclay (France)
