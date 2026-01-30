@@ -36,6 +36,8 @@ class Ingestion:
         self.train_data = None
         self.test_data = None
         self.ingestion_result = None
+        self.predictions_boostrap = []
+        self.boostrap_result = None
 
     def start_timer(self):
         """
@@ -128,6 +130,36 @@ class Ingestion:
 
         # TODO: Save the output from the model predict method. You can use this later in compute_result function
         self.y_test = self.model.predict(self.test_data['X_test'])
+
+        
+        # bootstrapping X_test to get error bars
+    def bootstrap(self, n_samples=1000, random_state=None, output_dir=None):
+        '''
+        Bootstrap X_test and predict to calculate uncertainty of metric
+        
+        :param self: Description
+        '''
+        print("[*] Calling bootstrap method to calculate multiple predictions")
+
+        self.predictions_boostrap = []
+        rng = np.random.default_rng(random_state)
+        n = len(self.test_data['X_test']) # number of examples in X_test
+        for i in range(n_samples):
+            sample = rng.choice(self.test_data['X_test'], size=n, replace=True)
+            self.predictions_boostrap.append(self.model.predict(sample))
+        boot_predictions = [
+            x.tolist() if isinstance(x, np.ndarray) else x
+            for x in self.predictions_boostrap
+        ]
+
+        self.boostrap_result = {
+            "boot_predictions": boot_predictions
+        }
+        bootstrap_file = os.path.join(output_dir, "bootstrap_predictions.json")
+        os.makedirs(output_dir, exist_ok=True)
+        with open(bootstrap_file, "w") as f:
+            json.dump(self.boostrap_result, f, indent=4)
+
 
     def compute_result(self):
         """
