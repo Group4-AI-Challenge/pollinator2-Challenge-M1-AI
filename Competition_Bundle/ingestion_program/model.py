@@ -34,7 +34,7 @@ class Model:
         # TODO: complete this
         self.clf = linear_model.SGDClassifier(
     	loss="log_loss",
-    	max_iter=10,
+    	max_iter=100,
     	n_jobs=1
 	)
         
@@ -77,5 +77,5 @@ class Model:
 
         print("[*] - Predicting test set using trained Classifier")
         # TODO: complete this
-        y = self.clf.predict(test_data["X_test"])
+        y = self.clf.predict(test_data)
         return y
