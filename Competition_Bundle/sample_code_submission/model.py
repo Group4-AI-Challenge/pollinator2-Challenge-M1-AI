@@ -12,6 +12,8 @@
 # ----------------------------------------
 import sklearn as sk
 from sklearn import linear_model
+from sklearn.neighbors import KNeighborsClassifier
+
 
 # ----------------------------------------
 # Model Class
@@ -32,11 +34,7 @@ class Model:
         """
         print("[*] - Initializing Classifier")
         # TODO: complete this
-        self.clf = linear_model.SGDClassifier(
-    	loss="log_loss",
-    	max_iter=10,
-    	n_jobs=1
-	)
+        self.clf = KNeighborsClassifier(n_neighbors=2)
         
 
     def fit(self, train_data):
