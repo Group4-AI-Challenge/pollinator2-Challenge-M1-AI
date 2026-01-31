@@ -1,5 +1,7 @@
 numpy
+matplotlib
+seaborn
 pandas
+pillow
 scikit-learn
 tqdm
-h5py
