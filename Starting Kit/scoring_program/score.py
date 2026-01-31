@@ -89,8 +89,6 @@ class Scoring:
 
         """
         print("[*] Computing scores")
-        print(len(self.ingestion_result['predictions']))
-        print(len(self.reference_data['y_test']))
         score = metrics.f1_score(self.reference_data['y_test'], 
                                     self.ingestion_result['predictions'], average='micro')
         # TODO: Compute scores here

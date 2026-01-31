@@ -10,8 +10,6 @@
 # ----------------------------------------
 # Imports
 # ----------------------------------------
-import sklearn as sk
-from sklearn import linear_model
 from sklearn.neighbors import KNeighborsClassifier
 
 
@@ -33,7 +31,6 @@ class Model:
         None
         """
         print("[*] - Initializing Classifier")
-        # TODO: complete this
         self.clf = KNeighborsClassifier(n_neighbors=2)
         
 
@@ -52,7 +49,6 @@ class Model:
         """
 
         print("[*] - Training Classifier on the train set")
-        # TODO: complete this
         X = train_data["X_train"]
         y = train_data["y_train"]
         self.clf.fit(X, y)
@@ -74,6 +70,5 @@ class Model:
         """
 
         print("[*] - Predicting test set using trained Classifier")
-        # TODO: complete this
         y = self.clf.predict(test_data["X_test"])
         return y
