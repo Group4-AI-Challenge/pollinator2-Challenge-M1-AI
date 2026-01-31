@@ -54,6 +54,13 @@ if __name__ == "__main__":
     sys.path.append(program_dir)
     sys.path.append(submission_dir)
 
+
+    #print(submission_dir)
+
+    #print(os.path.abspath(__file__))
+    #for file in os.listdir(submission_dir):
+        #print(file)
+    # Import model from submission dir
     from model import Model
 
     # Initialize Ingestions
@@ -73,9 +80,6 @@ if __name__ == "__main__":
 
     # predict submission
     ingestion.predict_submission()
-
-    # run and save bootstrapped predictions
-    #ingestion.bootstrap(random_state=44, output_dir=output_dir)
 
     # compute result
     ingestion.compute_result()

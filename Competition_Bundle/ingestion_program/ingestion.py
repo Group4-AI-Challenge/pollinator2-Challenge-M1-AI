@@ -36,8 +36,6 @@ class Ingestion:
         self.train_data = None
         self.test_data = None
         self.ingestion_result = None
-        self.predictions_boostrap = []
-        self.boostrap_result = None
 
     def start_timer(self):
         """
@@ -89,8 +87,6 @@ class Ingestion:
         """
         print("[*] Loading Train data")
 
-
-        # TODO: Load train and/or test data here
         tr_data_file = "X_train.npy"
         tr_labels_file = "y_train.npy"
         test_data_file = "X_test.npy"
@@ -99,7 +95,6 @@ class Ingestion:
             'X_train': load_npy(input_dir, tr_data_file), 
             'y_train': load_npy(input_dir, tr_labels_file)
         }
-        # self.train_data = load_npy(input_dir, tr_labels_file)
         self.test_data = {'X_test': load_npy(input_dir, test_data_file)}
 
     def init_submission(self, Model):
@@ -110,7 +105,6 @@ class Ingestion:
             Model (object): The model class.
         """
         print("[*] Initializing Submmited Model")
-        # TODO: initialize your model here
         self.model = Model()
 
     def fit_submission(self):
@@ -118,59 +112,20 @@ class Ingestion:
         Fit the submitted model.
         """
         print("[*] Fitting Submmited Model")
-        # TODO: call the fit method of your submitted model
         self.model.fit(self.train_data)
-        # self.model.fit()
 
     def predict_submission(self):
         """
         Make predictions using the submitted model.
         """
         print("[*] Calling predict method of submitted model")
-
-        # TODO: Save the output from the model predict method. You can use this later in compute_result function
-        self.y_test = self.model.predict(self.test_data['X_test'])
-
-        
-        # bootstrapping X_test to get error bars
-    def bootstrap(self, n_samples=1000, random_state=None, output_dir=None):
-        '''
-        Bootstrap X_test and predict to calculate uncertainty of metric
-        
-        :param self: Description
-        '''
-        print("[*] Calling bootstrap method to calculate multiple predictions")
-
-        self.predictions_boostrap = []
-        rng = np.random.default_rng(random_state)
-        n = len(self.test_data['X_test']) # number of examples in X_test
-        for i in range(n_samples):
-            sample = rng.choice(self.test_data['X_test'], size=n, replace=True)
-            self.predictions_boostrap.append(self.model.predict(sample))
-        boot_predictions = [
-            x.tolist() if isinstance(x, np.ndarray) else x
-            for x in self.predictions_boostrap
-        ]
-
-        self.boostrap_result = {
-            "boot_predictions": boot_predictions
-        }
-        bootstrap_file = os.path.join(output_dir, "bootstrap_predictions.json")
-        os.makedirs(output_dir, exist_ok=True)
-        with open(bootstrap_file, "w") as f:
-            json.dump(self.boostrap_result, f, indent=4)
-
+        self.y_test = self.model.predict(self.test_data)
 
     def compute_result(self):
         """
         Compute the ingestion result.
         """
         print("[*] Computing Ingestion Result")
-
-        # TODO: complete this function to compute set the output of the ingestion program
-        # You can save the result in a dictionary to be saved as json file by save_result function
-
-        # TODO: Modify below to set the result dict
         self.ingestion_result = {
             "predictions": self.y_test.tolist()
         }

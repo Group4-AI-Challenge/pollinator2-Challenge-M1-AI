@@ -53,7 +53,6 @@ if __name__ == "__main__":
     sys.path.append(reference_dir)
     sys.path.append(output_dir)
 
-
     from score import Scoring
 
     # Initialize Scoring program
@@ -70,9 +69,6 @@ if __name__ == "__main__":
 
     # Compute Scores
     scoring.compute_scores()
-
-    # calculate confidence intervals from the bootstrapped predictions
-    # scoring.calculate_CI(prediction_dir)
 
     # Write scores
     scoring.write_scores(output_dir)
