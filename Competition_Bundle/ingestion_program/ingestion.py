@@ -80,22 +80,28 @@ class Ingestion:
             with open(duration_file, "w") as f:
                 f.write(json.dumps({"ingestion_duration": duration_in_mins}, indent=4))
 
-    def load_train_and_test_data(self, input_dir):
+    def load_train_and_test_data(self, input_dir, test_phase):
         """
         Load the training and testing data.
 
         """
         print("[*] Loading Train data")
 
+        # train_path, test_path = input_dir, input_dir
+
+        train_path = input_dir
+        test_path = input_dir
+        # test_path = os.path.join(input_dir, test_phase)
+
         tr_data_file = "X_train.npy"
         tr_labels_file = "y_train.npy"
         test_data_file = "X_test.npy"
 
         self.train_data ={ 
-            'X_train': load_npy(input_dir, tr_data_file), 
-            'y_train': load_npy(input_dir, tr_labels_file)
+            'X_train': load_npy(train_path, tr_data_file), 
+            'y_train': load_npy(train_path, tr_labels_file)
         }
-        self.test_data = {'X_test': load_npy(input_dir, test_data_file)}
+        self.test_data = {'X_test': load_npy(test_path, test_data_file)}
 
     def init_submission(self, Model):
         """

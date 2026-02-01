@@ -70,7 +70,7 @@ if __name__ == "__main__":
     ingestion.start_timer()
 
     # Load train and test data
-    ingestion.load_train_and_test_data(input_dir)
+    ingestion.load_train_and_test_data(input_dir, test_phase='phase_1')
 
     # initialize submission
     ingestion.init_submission(Model)
