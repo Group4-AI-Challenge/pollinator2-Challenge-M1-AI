@@ -58,7 +58,6 @@ class Scoring:
         print("[*] Reading reference data")
         # print(reference_dir)
         # TODO: Load reference data here
-
         reference_data_file = os.path.join(reference_dir, "y_test.json")
         print(reference_dir)
         print(reference_data_file)
@@ -90,7 +89,7 @@ class Scoring:
         """
         print("[*] Computing scores")
         score = metrics.f1_score(self.reference_data['y_test'], 
-                                    self.ingestion_result['predictions'], average='micro')
+                                    self.ingestion_result['predictions'], average='macro')
         # TODO: Compute scores here
         self.scores_dict = {'score': score}
 
