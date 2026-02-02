@@ -42,20 +42,20 @@ It is recommended that you set up a virtual environment to isolate the projects'
 1. Install conda from https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 2. Create a new environment:
 ```
-conda create --name m1-ai-challenge python=3.12.8
+conda create --name pollinator-challenge python=3.12.8
 ```
 3. Activate your environment:
 ```
-conda activate m1-ai-challenge
+conda activate pollinator-challenge
 ```
 4. Install project dependencies: 
 ```
-pip install -r Conda/requirements.txt
+pip install -r "Starting Kit/requirements.txt"
 ```
 5. (Optional) Deactivate and remove your environment:
 ```
 conda deactivate
-conda env remove --name m1-ai-challenge
+conda env remove --name pollinator-challenge
 ```
 
 #### Option B: Global installation
