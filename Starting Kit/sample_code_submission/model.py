@@ -60,7 +60,7 @@ class Model:
 
         Parameters
         ----------
-        test_data: dict
+        test_data: list
             contains test data
 
         Returns
@@ -70,5 +70,5 @@ class Model:
         """
 
         print("[*] - Predicting test set using trained Classifier")
-        y = self.clf.predict(X_test)
+        y = self.clf.predict(X_test['X_test'])
         return y
