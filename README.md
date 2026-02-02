@@ -1,4 +1,4 @@
-# Pollinator Identification - a 2026 Codabench AI Challenge
+# Pollinator Identification - 2026 Codabench AI Challenge
 
 This project implements a Codabench AI challenge for accurately classifying images of pollinator species extracted from field recordings. The challenge aims at supporting biodiversity research as well as food security efforts, and is developed as part of the course "Creation of an AI challenge" at Université Paris Saclay in 2026. 
 
@@ -24,6 +24,8 @@ After feature extraction, a structured dataset was created, with each sample con
 
 ## Install
 
+### 1. Clone the project
+
 To get started, open a terminal to clone the repository and move into the project folder:
 
 ```bash
@@ -31,7 +33,35 @@ git clone https://github.com/Group4-AI-Challenge/pollinator2-Challenge-M1-AI.git
 cd pollinator2-challenge-m1-ai
 ```
 
-Next, move to the "Starting Kit" folder and install the projects' dependencies: 
+### 2. Install dependencies
+
+It is recommended that you set up a virtual environment to isolate the projects' dependencies from other projects you are working on. To achieve this, you can install conda by following the instructions in [Option A: Conda Setup](#option-a-conda-setup). If you do not wish to do so, you can proceed with [Option B: Global Installation](#option-b-global-installation).
+
+#### Option A: Conda Setup
+
+1. Install conda from https://conda.io/projects/conda/en/latest/user-guide/install/index.html
+2. Create a new environment:
+```
+conda create --name m1-ai-challenge python=3.12.8
+```
+3. Activate your environment:
+```
+conda activate m1-ai-challenge
+```
+4. Install project dependencies: 
+```
+pip install -r Conda/requirements.txt
+```
+5. (Optional) Deactivate and remove your environment:
+```
+conda deactivate
+conda env remove --name m1-ai-challenge
+```
+
+#### Option B: Global installation
+
+To globally intall all dependencies, move to the "Starting Kit" folder and install all dependencies from the "requirements.txt" file by executing the following commands:
+
 ```bash
 cd "Starting Kit"
 echo "Installing dependencies..."
@@ -49,7 +79,7 @@ Once installed, you are ready to familiarize yourself with the Starting Kit. The
 - the training data in "input_data" 
 - a sample model in "sample_code_submission"
 - a sample model output in "sample_result_submission"
-- the ingestion program in "ingestion_program" that runs your model once submitted to Codabench
+- the ingestion program in "ingestion_program" that automatically runs your model once submitted to Codabench
 
 You can simply start by reading the "README.ipynb" file to begin working on your own submission for the competition.
 
