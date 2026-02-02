@@ -88,28 +88,26 @@ You can simply start by reading the "README.ipynb" file to begin working on your
 ```bash
 pollinator2-challenge-m1-ai/
 ├── README.md                        # Main project README
-├── competition_bundle/              # Codabench competition package
+├── competition_bundle/              
 │   ├── competition.yaml             # Competition configuration
 │   ├── ingestion_program/           # Data ingestion pipeline
 │   ├── scoring_program/             # Evaluation pipeline
-│   ├── input_data/                  # Training data
-│   ├── reference_data/              # Test data and labels
+│   ├── input_data/                  # Training & test data, train labels
+│   ├── reference_data/              # Test labels
 │   ├── sample_code_submission/      # Submission template
 │   ├── sample_result_submission/    # Example submission
-│   ├── utilities/                   # Build & packaging utilities
+│   ├── split.py                     # Train/test splitting
+│   ├── utilities/                   # zipping of competition bundle
 │   └── pages/                       # Codabench info pages
-├── starting-kit/                    # Beginner-friendly workspace
+├── starting-kit/                    
 │   ├── README.ipynb                 # Interactive starter notebook
 │   ├── README.md                    # Quick start guide
-│   ├── data/                        # Local development data
+│   ├── data/                        # Train & test data
 │   ├── ingestion_program/           # Local ingestion script
 │   ├── sample_code_submission/      # Model template
-│   ├── sample_result_submission/    # Result template
+│   ├── sample_result_submission/    # Saved results
 │   └── scoring_program/             # Local scoring script
-├── phases/                          # Competition phases
-│   ├── phase_1/                     # Phase 1 test data
-│   └── phase_2/                     # Phase 2 test data
-├── conda/                           # Environment setup
+├── conda/                           
 │   ├── README.md                    # Conda setup instructions
 │   └── requirements.txt             # Python dependencies
 ```
