@@ -1,43 +1,106 @@
-# Pollinator identification challenge
+# Pollinator Identification - Codabench AI Challenge 2026
+
+This project implements a Codabench AI challenge for accurately classifying images of pollinator species extracted from field recordings. The challenge aims at supporting biodiversity research as well as food security efforts, and is developed as part of the course "Creation of an AI challenge" at Université Paris Saclay in 2026. 
+
+## Table of contents
+
+- [Background](#background)
+- [Challenge Objectives](#challenge-objectives)
+- [Install](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Authors](#authors)
+- [License](#license)
+
+## Background
+
 Understanding pollinator activity is vital for biodiversity research and global food security, yet manual observation from field recordings is slow and impractical at scale. In this project, we use a large set of labeled images extracted from videos of flowers to train a machine-learning model that classifies the type of pollinator in case of a visit. The data might contain images without insects, visual conditions vary strongly across recordings, and the same scene can look very different depending on the camera angle. A key objective is therefore not only accurate classification, but also strong generalization, testing whether a model trained on one viewpoint can successfully recognize pollinators from another. In this project, we focus on the lack of misclassifications. Correctly identifying the pollinator species is important because different insects play different roles in ecosystems. Misclassifying them can lead to incorrect conclusions about species-specific behavior, interactions, and their contribution to pollination.
 
-## Challenge objectives
+## Challenge Objectives
 
 The task in this competition is to accurately classify pollinators from images. The input data originally consist of 528 MP4 videos recorded from multiple angles. From these videos, images were extracted and annotated based on the pollinator visiting a flower. The images were then cropped to focus on the flower region.
 
 After feature extraction, a structured dataset was created, with each sample containing approximately 1500 features. The output of the model should be the correct pollinator visiting the flower, or 0 in the case where no pollinator is present. The goal of the task is to classify pollinators as accurately as possible.
 
+## Install
 
-## Team members
+To get started, open a terminal to clone the repository and move into the project folder:
 
-HORNERO MERINO Marina (group leader)\
-CHOJNACKA Dominika\
-LEONARDI Raphael\
-CARKA Krisa \
-EL OTMANI Youssef \
-BUSCH Frederic \
-Contact: marina.hornero-merino@universite-paris-saclay.fr
+```bash
+git clone https://github.com/Group4-AI-Challenge/pollinator2-Challenge-M1-AI.git
+cd pollinator2-challenge-m1-ai
+```
 
-
-## How to execute the files
-
-To be able to execute the jupyter notebooks inside this Github repo and compete in the AI Challenge, you will need to install
-a few librarires by performing inside this folder : 
-
- ```bash
+Next, move to the "Starting Kit" folder and install the projects' dependencies: 
+```bash
+cd "Starting Kit"
 echo "Installing dependencies..."
 pip install -r requirements.txt
-echo "Done!"
 
 ```
 
-## Starting Kit
-The starting kit is provided in the Codabench competition. It is provided as a guide for the participants. It contains:
+## Usage
 
-- ingestion program: this is the program we use to read the data in codabench
-- data: it contains the data for the competition
-- sample code submission with the model that 
+### Starting Kit
 
+Once installed, you are ready to familiarize yourself with the Starting Kit. The "Starting Kit" folder contains: 
 
+- the "README.ipynb" file to get you started
+- the training data in "input_data" 
+- a sample model in "sample_code_submission"
+- a sample model output in "sample_result_submission"
+- the ingestion program in "ingestion_program" that runs your model once submitted to Codabench
 
+You can simply start by reading the "README.ipynb" file to begin working on your own submission for the competition.
 
+## Project Structure
+
+```bash
+pollinator2-challenge-m1-ai/
+├── README.md                        # Main project README
+├── competition_bundle/              # Codabench competition package
+│   ├── competition.yaml             # Competition configuration
+│   ├── ingestion_program/           # Data ingestion pipeline
+│   ├── scoring_program/             # Evaluation pipeline
+│   ├── input_data/                  # Training data
+│   ├── reference_data/              # Test data and labels
+│   ├── sample_code_submission/      # Submission template
+│   ├── sample_result_submission/    # Example submission
+│   ├── utilities/                   # Build & packaging utilities
+│   └── pages/                       # Codabench info pages
+├── starting-kit/                    # Beginner-friendly workspace
+│   ├── README.ipynb                 # Interactive starter notebook
+│   ├── README.md                    # Quick start guide
+│   ├── data/                        # Local development data
+│   ├── ingestion_program/           # Local ingestion script
+│   ├── sample_code_submission/      # Model template
+│   ├── sample_result_submission/    # Result template
+│   └── scoring_program/             # Local scoring script
+├── phases/                          # Competition phases
+│   ├── phase_1/                     # Phase 1 test data
+│   └── phase_2/                     # Phase 2 test data
+├── conda/                           # Environment setup
+│   ├── README.md                    # Conda setup instructions
+│   └── requirements.txt             # Python dependencies
+```
+
+## Authors
+
+### Team Lead
+- Marina Hornero Merino: marina.hornero-merino@universite-paris-saclay.fr
+
+### Team Members
+- Dominika Chojnacka
+- Youssef El Otmani
+- Krisa Carka
+- Raphael Leonardi
+- Frederic Busch
+
+### Mentors
+- Khuong Thanh Gia Hieu
+- Ihsan Ullah
+- Lisheng Sun
+
+## License
+
+This project is part of the M1 AI Challenge course at Université Paris-Saclay. All code and materials are provided for educational and competition purposes.
