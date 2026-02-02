@@ -1,4 +1,4 @@
-# Pollinator Identification - Codabench AI Challenge 2026
+# Pollinator Identification - a 2026 Codabench AI Challenge
 
 This project implements a Codabench AI challenge for accurately classifying images of pollinator species extracted from field recordings. The challenge aims at supporting biodiversity research as well as food security efforts, and is developed as part of the course "Creation of an AI challenge" at Université Paris Saclay in 2026. 
 
