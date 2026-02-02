@@ -62,9 +62,7 @@ if __name__ == "__main__":
     scoring.start_timer()
 
     # Load reference data
-    # scoring.load_reference_data(reference_dir)
     test_phase = 'phase_1'
-    # reference_dir_path = os.path.join(reference_dir, test_phase)
     reference_dir_path = reference_dir
     scoring.load_reference_data(reference_dir_path)
 

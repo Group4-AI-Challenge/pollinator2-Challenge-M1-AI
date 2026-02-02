@@ -5,7 +5,7 @@ This project implements a Codabench AI challenge for accurately classifying imag
 ## Table of contents
 
 - [Background](#background)
-- [Challenge Objectives](#challenge-objectives)
+- [Challenge Description](#challenge-description)
 - [Install](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
@@ -16,11 +16,29 @@ This project implements a Codabench AI challenge for accurately classifying imag
 
 Understanding pollinator activity is vital for biodiversity research and global food security, yet manual observation from field recordings is slow and impractical at scale. In this project, we use a large set of labeled images extracted from videos of flowers to train a machine-learning model that classifies the type of pollinator in case of a visit. The data might contain images without insects, visual conditions vary strongly across recordings, and the same scene can look very different depending on the camera angle. A key objective is therefore not only accurate classification, but also strong generalization, testing whether a model trained on one viewpoint can successfully recognize pollinators from another. In this project, we focus on the lack of misclassifications. Correctly identifying the pollinator species is important because different insects play different roles in ecosystems. Misclassifying them can lead to incorrect conclusions about species-specific behavior, interactions, and their contribution to pollination.
 
-## Challenge Objectives
+## Challenge Description
+
+The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/
+
+### Objectives
 
 The task in this competition is to accurately classify pollinators from images. The input data originally consist of 528 MP4 videos recorded from multiple angles. From these videos, images were extracted and annotated based on the pollinator visiting a flower. The images were then cropped to focus on the flower region.
 
 After feature extraction, a structured dataset was created, with each sample containing approximately 1500 features. The output of the model should be the correct pollinator visiting the flower, or 0 in the case where no pollinator is present. The goal of the task is to classify pollinators as accurately as possible.
+
+### Phases
+
+There are two phases in this competition.
+
+Phase 1: In the first phase, you will be provided with a training set together with the corresponding labels. You will be able to upload your solutions to Codabench and evaluate how well your model performs. A leaderboard will be available during this phase to compare your results with those of other participants.
+
+Phase 2: In the second phase, a new test dataset will be used to evaluate the ability of your code to generalize. This dataset will contain images captured from angles that are different from those in Phase 1. You need to submit only one model of your choice in that round, and you will see your final score.
+
+### Timeline
+
+Phase 1: 03.02.2026 - 20.02.2026
+
+Phase 2: 20.02.2026 - 16.03.2026
 
 ## Install
 
@@ -42,20 +60,20 @@ It is recommended that you set up a virtual environment to isolate the projects'
 1. Install conda from https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 2. Create a new environment:
 ```
-conda create --name m1-ai-challenge python=3.12.8
+conda create --name pollinator-challenge python=3.12.8
 ```
 3. Activate your environment:
 ```
-conda activate m1-ai-challenge
+conda activate pollinator-challenge
 ```
 4. Install project dependencies: 
 ```
-pip install -r Conda/requirements.txt
+pip install -r "Starting Kit/requirements.txt"
 ```
 5. (Optional) Deactivate and remove your environment:
 ```
 conda deactivate
-conda env remove --name m1-ai-challenge
+conda env remove --name pollinator-challenge
 ```
 
 #### Option B: Global installation
@@ -88,28 +106,26 @@ You can simply start by reading the "README.ipynb" file to begin working on your
 ```bash
 pollinator2-challenge-m1-ai/
 ├── README.md                        # Main project README
-├── competition_bundle/              # Codabench competition package
+├── competition_bundle/              
 │   ├── competition.yaml             # Competition configuration
 │   ├── ingestion_program/           # Data ingestion pipeline
 │   ├── scoring_program/             # Evaluation pipeline
-│   ├── input_data/                  # Training data
-│   ├── reference_data/              # Test data and labels
+│   ├── input_data/                  # Training & test data, train labels
+│   ├── reference_data/              # Test labels
 │   ├── sample_code_submission/      # Submission template
 │   ├── sample_result_submission/    # Example submission
-│   ├── utilities/                   # Build & packaging utilities
+│   ├── split.py                     # Train/test splitting
+│   ├── utilities/                   # zipping of competition bundle
 │   └── pages/                       # Codabench info pages
-├── starting-kit/                    # Beginner-friendly workspace
+├── starting-kit/                    
 │   ├── README.ipynb                 # Interactive starter notebook
 │   ├── README.md                    # Quick start guide
-│   ├── data/                        # Local development data
+│   ├── data/                        # Train & test data
 │   ├── ingestion_program/           # Local ingestion script
 │   ├── sample_code_submission/      # Model template
-│   ├── sample_result_submission/    # Result template
+│   ├── sample_result_submission/    # Saved results
 │   └── scoring_program/             # Local scoring script
-├── phases/                          # Competition phases
-│   ├── phase_1/                     # Phase 1 test data
-│   └── phase_2/                     # Phase 2 test data
-├── conda/                           # Environment setup
+├── conda/                           
 │   ├── README.md                    # Conda setup instructions
 │   └── requirements.txt             # Python dependencies
 ```
