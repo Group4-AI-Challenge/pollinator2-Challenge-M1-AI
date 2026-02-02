@@ -10,7 +10,7 @@
 # ----------------------------------------
 # Imports
 # ----------------------------------------
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 
 
 # ----------------------------------------
@@ -31,7 +31,7 @@ class Model:
         None
         """
         print("[*] - Initializing Classifier")
-        self.clf = KNeighborsClassifier(n_neighbors=2)
+        self.clf = SVC()
         
 
     def fit(self, train_data):
