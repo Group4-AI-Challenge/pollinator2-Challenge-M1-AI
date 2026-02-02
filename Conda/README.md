@@ -7,12 +7,12 @@ https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 
 2. Create env
 ```
-conda create --name m1-ai-challenge python=3.12.8
+conda create --name pollinator-challenge python=3.12.8
 ```
 
 3. Activate env
 ```
-conda activate m1-ai-challenge
+conda activate pollinator-challenge
 ```
 
 4. Install required packages
@@ -26,5 +26,5 @@ To deactivate or/and remove the env after you have used it, you can use the foll
 conda deactivate
 ```
 ```
-conda env remove --name m1-ai-challenge
+conda env remove --name pollinator-challenge
 ```
