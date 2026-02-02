@@ -124,6 +124,7 @@ pollinator2-challenge-m1-ai/
 │   ├── ingestion_program/           # Local ingestion script
 │   ├── sample_code_submission/      # Model template
 │   ├── sample_result_submission/    # Saved results
+│   ├── split.py                     # Train/test splitting
 │   └── scoring_program/             # Local scoring script
 ├── conda/                           
 │   ├── README.md                    # Conda setup instructions
