@@ -87,11 +87,8 @@ class Ingestion:
         """
         print("[*] Loading Train data")
 
-        # train_path, test_path = input_dir, input_dir
-
         train_path = input_dir
         test_path = input_dir
-        # test_path = os.path.join(input_dir, test_phase)
 
         tr_data_file = "X_train.npy"
         tr_labels_file = "y_train.npy"

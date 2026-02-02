@@ -54,13 +54,6 @@ if __name__ == "__main__":
     sys.path.append(program_dir)
     sys.path.append(submission_dir)
 
-
-    #print(submission_dir)
-
-    #print(os.path.abspath(__file__))
-    #for file in os.listdir(submission_dir):
-        #print(file)
-    # Import model from submission dir
     from model import Model
 
     # Initialize Ingestions
