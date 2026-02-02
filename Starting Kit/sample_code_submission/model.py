@@ -53,7 +53,7 @@ class Model:
         y = train_data["y_train"]
         self.clf.fit(X, y)
 
-    def predict(self, test_data):
+    def predict(self, X_test):
 
         """
         This function predicts labels on test data.
@@ -70,5 +70,5 @@ class Model:
         """
 
         print("[*] - Predicting test set using trained Classifier")
-        y = self.clf.predict(test_data["X_test"])
+        y = self.clf.predict(X_test)
         return y
