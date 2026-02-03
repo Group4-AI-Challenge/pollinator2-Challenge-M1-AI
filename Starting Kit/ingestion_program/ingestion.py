@@ -80,25 +80,25 @@ class Ingestion:
             with open(duration_file, "w") as f:
                 f.write(json.dumps({"ingestion_duration": duration_in_mins}, indent=4))
 
-    def load_train_and_test_data(self, input_dir):
+    def load_train_and_test_data(self, input_dir, test_phase):
         """
         Load the training and testing data.
 
         """
         print("[*] Loading Train data")
 
+        train_path = input_dir
+        test_path = input_dir
 
-        # TODO: Load train and/or test data here
         tr_data_file = "X_train.npy"
         tr_labels_file = "y_train.npy"
         test_data_file = "X_test.npy"
 
         self.train_data ={ 
-            'X_train': load_npy(input_dir, tr_data_file), 
-            'y_train': load_npy(input_dir, tr_labels_file)
+            'X_train': load_npy(train_path, tr_data_file), 
+            'y_train': load_npy(train_path, tr_labels_file)
         }
-        # self.train_data = load_npy(input_dir, tr_labels_file)
-        self.test_data = {'X_test': load_npy(input_dir, test_data_file)}
+        self.test_data = {'X_test': load_npy(test_path, test_data_file)}
 
     def init_submission(self, Model):
         """
@@ -108,7 +108,6 @@ class Ingestion:
             Model (object): The model class.
         """
         print("[*] Initializing Submmited Model")
-        # TODO: initialize your model here
         self.model = Model()
 
     def fit_submission(self):
@@ -116,17 +115,13 @@ class Ingestion:
         Fit the submitted model.
         """
         print("[*] Fitting Submmited Model")
-        # TODO: call the fit method of your submitted model
         self.model.fit(self.train_data)
-        # self.model.fit()
 
     def predict_submission(self):
         """
         Make predictions using the submitted model.
         """
         print("[*] Calling predict method of submitted model")
-
-        # TODO: Save the output from the model predict method. You can use this later in compute_result function
         self.y_test = self.model.predict(self.test_data)
 
     def compute_result(self):
@@ -134,11 +129,6 @@ class Ingestion:
         Compute the ingestion result.
         """
         print("[*] Computing Ingestion Result")
-
-        # TODO: complete this function to compute set the output of the ingestion program
-        # You can save the result in a dictionary to be saved as json file by save_result function
-
-        # TODO: Modify below to set the result dict
         self.ingestion_result = {
             "predictions": self.y_test.tolist()
         }
