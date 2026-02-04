@@ -9,7 +9,6 @@ import os
 # Directories
 # ------------------------------------------
 module_dir = os.path.dirname(os.path.realpath(__file__))
-print(module_dir)
 root_dir_name = os.path.dirname(module_dir)
 
 # ------------------------------------------
@@ -49,46 +48,12 @@ if __name__ == "__main__":
         output_dir = "/app/output"
         program_dir = "/app/program"
         submission_dir = "/app/output/sample_code_submission"
-        
-    def print_project_structure(path, indent=0):
-        # Check if the provided path exists
-        if not os.path.exists(path):
-            print(f"Path '{path}' does not exist.")
-            return
-
-        # Loop through the items in the directory
-        for item in os.listdir(path):
-            # Create an indented representation
-            print(' ' * indent + '|-- ' + item)
-            item_path = os.path.join(path, item)
-
-            # If it's a directory, recurse deeper
-            if os.path.isdir(item_path):
-                print_project_structure(item_path, indent + 4)
-
-    # Change 'your_project_path' to the path of your project directory
-    print_project_structure('/app')
-
-    
-        # Debugging: Print exactly what is in the directories
-    print(f"Checking submission_dir: {submission_dir}")
-    if os.path.exists(submission_dir):
-        print(f"Contents: {os.listdir(submission_dir)}")
-    else:
-        print("submission_dir NOT FOUND")
 
     sys.path.append(input_dir)
     sys.path.append(output_dir)
     sys.path.append(program_dir)
     sys.path.append(submission_dir)
 
-
-    print(submission_dir)
-
-    print(os.path.abspath(__file__))
-    #for file in os.listdir(submission_dir):
-        #print(file)
-    # Import model from submission dir
     from model import Model
 
     # Initialize Ingestions
@@ -98,7 +63,7 @@ if __name__ == "__main__":
     ingestion.start_timer()
 
     # Load train and test data
-    ingestion.load_train_and_test_data(input_dir)
+    ingestion.load_train_and_test_data(input_dir, test_phase='phase_1')
 
     # initialize submission
     ingestion.init_submission(Model)

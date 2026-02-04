@@ -53,11 +53,6 @@ if __name__ == "__main__":
     sys.path.append(reference_dir)
     sys.path.append(output_dir)
 
-    print(prediction_dir)
-    print(os.path.abspath(__file__))
-    #for file in os.listdir(prediction_dir):
-        #print(file)
-
     from score import Scoring
 
     # Initialize Scoring program
@@ -67,7 +62,9 @@ if __name__ == "__main__":
     scoring.start_timer()
 
     # Load reference data
-    scoring.load_reference_data(reference_dir)
+    test_phase = 'phase_1'
+    reference_dir_path = reference_dir
+    scoring.load_reference_data(reference_dir_path)
 
     # Load ingestion result
     scoring.load_ingestion_result(prediction_dir)

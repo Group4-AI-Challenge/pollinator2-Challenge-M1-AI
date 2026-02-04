@@ -18,7 +18,7 @@ Understanding pollinator activity is vital for biodiversity research and global 
 
 ## Challenge Description
 
-The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/
+The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. 
 
 ### Objectives
 
@@ -94,7 +94,7 @@ pip install -r requirements.txt
 Once installed, you are ready to familiarize yourself with the Starting Kit. The "Starting Kit" folder contains: 
 
 - the "README.ipynb" file to get you started
-- the training data in "input_data" 
+- sample training data in "data"
 - a sample model in "sample_code_submission"
 - a sample model output in "sample_result_submission"
 - the ingestion program in "ingestion_program" that automatically runs your model once submitted to Codabench
@@ -124,6 +124,7 @@ pollinator2-challenge-m1-ai/
 │   ├── ingestion_program/           # Local ingestion script
 │   ├── sample_code_submission/      # Model template
 │   ├── sample_result_submission/    # Saved results
+│   ├── split.py                     # Train/test splitting
 │   └── scoring_program/             # Local scoring script
 ├── conda/                           
 │   ├── README.md                    # Conda setup instructions
