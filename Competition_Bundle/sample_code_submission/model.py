@@ -10,9 +10,7 @@
 # ----------------------------------------
 # Imports
 # ----------------------------------------
-from sklearn.svm import SVC
-
-
+from sklearn.neighbors import KNeighborsClassifier
 # ----------------------------------------
 # Model Class
 # ----------------------------------------
@@ -31,7 +29,7 @@ class Model:
         None
         """
         print("[*] - Initializing Classifier")
-        self.clf = SVC()
+        self.clf = KNeighborsClassifier(n_neighbors=15)
 
         
 
