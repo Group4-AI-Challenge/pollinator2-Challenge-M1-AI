@@ -4,14 +4,14 @@ This project implements a Codabench AI challenge for accurately classifying imag
 
 ## Table of contents
 
-- [Challenge Description](#challenge-description)   
+- [The challenge](#the-challenge)   
 - [Install](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Authors](#authors)
 - [License](#license)
 
-## Challenge Description
+## The challenge
 
 ### Introduction
 
