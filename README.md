@@ -32,15 +32,6 @@ Phase 1: In the first phase, you will be provided with a training set together w
 
 Phase 2: In the second phase, a new test dataset will be used to evaluate the ability of your code to generalize. This dataset will contain images captured from angles that are different from those in Phase 1. You need to submit only one model of your choice in that round, and you will see your final score.
 
-### How to join the challenge
-
-The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. To participate in the challenge, please proceed with the following steps:
-
-1. Login or create an account on Codabench
-2. Go to "My Submissions" tab
-3. Accept the terms and conditions
-4. Click the Register button
-
 ### Timeline
 
 Phase 1: 03.02.2026 - 20.02.2026
@@ -49,13 +40,22 @@ Phase 2: 20.02.2026 - 16.03.2026
 
 ## Install
 
-### 1. Download the challenge
+### 1. Join the Codabench challenge
+
+The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. To participate in the challenge, please proceed with the following steps:
+
+1. Login or create an account on Codabench
+2. Go to "My Submissions" tab
+3. Accept the terms and conditions
+4. Click the Register button
+
+### 2. Download the Starting Kit
 
 To get started, go to the Codabench website https://www.codabench.org/competitions/13370/ and download the Starting Kit from the Starting Kit tab. After that, proceed with "Install dependencies".
 
 **Important**: Note that the necessary "data" folder is **not** included in this GitHub. It is therefore recommended that you download the Starting Kit directly from Codabench. Alternatively, if you decide to clone this repository, be sure to manually add the "data" folder from the Codabench Starting Kit. 
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 It is recommended that you set up a virtual environment to isolate the projects' dependencies from other projects you are working on. To achieve this, you can install conda by following the instructions in [Option A: Conda Setup](#option-a-conda-setup). If you do not wish to do so, you can proceed with [Option B: Global Installation](#option-b-global-installation).
 
