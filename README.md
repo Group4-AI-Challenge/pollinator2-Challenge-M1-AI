@@ -49,14 +49,11 @@ Phase 2: 20.02.2026 - 16.03.2026
 
 ## Install
 
-### 1. Clone the project
+### 1. Download the challenge
 
-To get started, open a terminal to clone the repository and move into the project folder:
+To get started, go to the Codabench website https://www.codabench.org/competitions/13370/ and download the Starting Kit from the Starting Kit tab. After that, proceed with "Install dependencies".
 
-```bash
-git clone https://github.com/Group4-AI-Challenge/pollinator2-Challenge-M1-AI.git
-cd pollinator2-challenge-m1-ai
-```
+**Important**: Note that the necessary "data" folder is **not** included in this GitHub. It is therefore recommended that you download the Starting Kit directly from Codabench. Alternatively, if you decide to clone this repository, be sure to manually add the "data" folder from the Codabench Starting Kit. 
 
 ### 2. Install dependencies
 
@@ -65,19 +62,20 @@ It is recommended that you set up a virtual environment to isolate the projects'
 #### Option A: Conda Setup
 
 1. Install conda from https://conda.io/projects/conda/en/latest/user-guide/install/index.html
-2. Create a new environment:
+2. Open a terminal in the Starting Kit folder. 
+3. Create a new environment:
 ```
 conda create --name pollinator-challenge python=3.12.8
 ```
-3. Activate your environment:
+4. Activate your environment:
 ```
 conda activate pollinator-challenge
 ```
-4. Install project dependencies: 
+5. Install project dependencies: 
 ```
-pip install -r "Starting Kit/requirements.txt"
+pip install -r requirements.txt"
 ```
-5. (Optional) Deactivate and remove your environment:
+6. (Optional) Deactivate and remove your environment:
 ```
 conda deactivate
 conda env remove --name pollinator-challenge
