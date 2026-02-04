@@ -4,21 +4,19 @@ This project implements a Codabench AI challenge for accurately classifying imag
 
 ## Table of contents
 
-- [Background](#background)
-- [Challenge Description](#challenge-description)
+- [Introduction](#introduction)
+- [Challenge Description](#challenge-description)   
 - [Install](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Authors](#authors)
 - [License](#license)
 
-## Background
+## Introduction
 
 Understanding pollinator activity is vital for biodiversity research and global food security, yet manual observation from field recordings is slow and impractical at scale. In this project, we use a large set of labeled images extracted from videos of flowers to train a machine-learning model that classifies the type of pollinator in case of a visit. The data might contain images without insects, visual conditions vary strongly across recordings, and the same scene can look very different depending on the camera angle. A key objective is therefore not only accurate classification, but also strong generalization, testing whether a model trained on one viewpoint can successfully recognize pollinators from another. In this project, we focus on the lack of misclassifications. Correctly identifying the pollinator species is important because different insects play different roles in ecosystems. Misclassifying them can lead to incorrect conclusions about species-specific behavior, interactions, and their contribution to pollination.
 
 ## Challenge Description
-
-The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. 
 
 ### Objectives
 
@@ -33,6 +31,15 @@ There are two phases in this competition.
 Phase 1: In the first phase, you will be provided with a training set together with the corresponding labels. You will be able to upload your solutions to Codabench and evaluate how well your model performs. A leaderboard will be available during this phase to compare your results with those of other participants.
 
 Phase 2: In the second phase, a new test dataset will be used to evaluate the ability of your code to generalize. This dataset will contain images captured from angles that are different from those in Phase 1. You need to submit only one model of your choice in that round, and you will see your final score.
+
+### How to join the challenge
+
+The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. To participate in the challenge, please proceed with the following steps:
+
+1. Login or create an account on Codabench
+2. Go to "My Submissions" tab
+3. Accept the terms and conditions
+4. Click the Register button
 
 ### Timeline
 
@@ -146,8 +153,11 @@ pollinator2-challenge-m1-ai/
 ### Mentors
 - Khuong Thanh Gia Hieu
 - Ihsan Ullah
-- Lisheng Sun
+- Lisheng Sun-Hosoya
+- Anne-Catherine Letournel
 
 ## License
 
-This project is part of the M1 AI Challenge course at Université Paris-Saclay. All code and materials are provided for educational and competition purposes.
+This project is part of the M1 AI Challenge course at Université Paris-Saclay. All code and materials are provided for educational and competition purposes. The competition is governed by the General ChaLearn Contest Rules and no prizes are granted.
+
+The data used in this challenge are private and may not be used outside of the scope of this competition.
