@@ -4,21 +4,18 @@ This project implements a Codabench AI challenge for accurately classifying imag
 
 ## Table of contents
 
-- [Background](#background)
-- [Challenge Description](#challenge-description)
+- [The challenge](#the-challenge)   
 - [Install](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Authors](#authors)
 - [License](#license)
 
-## Background
+## The challenge
+
+### Introduction
 
 Understanding pollinator activity is vital for biodiversity research and global food security, yet manual observation from field recordings is slow and impractical at scale. In this project, we use a large set of labeled images extracted from videos of flowers to train a machine-learning model that classifies the type of pollinator in case of a visit. The data might contain images without insects, visual conditions vary strongly across recordings, and the same scene can look very different depending on the camera angle. A key objective is therefore not only accurate classification, but also strong generalization, testing whether a model trained on one viewpoint can successfully recognize pollinators from another. In this project, we focus on the lack of misclassifications. Correctly identifying the pollinator species is important because different insects play different roles in ecosystems. Misclassifying them can lead to incorrect conclusions about species-specific behavior, interactions, and their contribution to pollination.
-
-## Challenge Description
-
-The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. 
 
 ### Objectives
 
@@ -42,35 +39,42 @@ Phase 2: 20.02.2026 - 16.03.2026
 
 ## Install
 
-### 1. Clone the project
+### 1. Join the Codabench challenge
 
-To get started, open a terminal to clone the repository and move into the project folder:
+The Codabench challenge and further information can be found at https://www.codabench.org/competitions/13370/. To participate in the challenge, please proceed with the following steps:
 
-```bash
-git clone https://github.com/Group4-AI-Challenge/pollinator2-Challenge-M1-AI.git
-cd pollinator2-challenge-m1-ai
-```
+1. Login or create an account on Codabench
+2. Go to "My Submissions" tab
+3. Accept the terms and conditions
+4. Click the Register button
 
-### 2. Install dependencies
+### 2. Download the Starting Kit
+
+To get started, go to the Codabench website https://www.codabench.org/competitions/13370/ and download the Starting Kit from the Starting Kit tab. After that, proceed with "Install dependencies".
+
+**Important**: Note that the necessary "data" folder is **not** included in this GitHub. It is therefore recommended that you download the Starting Kit directly from Codabench. Alternatively, if you decide to clone this repository, be sure to manually add the "data" folder from the Codabench Starting Kit. 
+
+### 3. Install dependencies
 
 It is recommended that you set up a virtual environment to isolate the projects' dependencies from other projects you are working on. To achieve this, you can install conda by following the instructions in [Option A: Conda Setup](#option-a-conda-setup). If you do not wish to do so, you can proceed with [Option B: Global Installation](#option-b-global-installation).
 
 #### Option A: Conda Setup
 
 1. Install conda from https://conda.io/projects/conda/en/latest/user-guide/install/index.html
-2. Create a new environment:
+2. Open a terminal in the Starting Kit folder. 
+3. Create a new environment:
 ```
 conda create --name pollinator-challenge python=3.12.8
 ```
-3. Activate your environment:
+4. Activate your environment:
 ```
 conda activate pollinator-challenge
 ```
-4. Install project dependencies: 
+5. Install project dependencies: 
 ```
-pip install -r "Starting Kit/requirements.txt"
+pip install -r requirements.txt"
 ```
-5. (Optional) Deactivate and remove your environment:
+6. (Optional) Deactivate and remove your environment:
 ```
 conda deactivate
 conda env remove --name pollinator-challenge
@@ -146,8 +150,11 @@ pollinator2-challenge-m1-ai/
 ### Mentors
 - Khuong Thanh Gia Hieu
 - Ihsan Ullah
-- Lisheng Sun
+- Lisheng Sun-Hosoya
+- Anne-Catherine Letournel
 
 ## License
 
-This project is part of the M1 AI Challenge course at Université Paris-Saclay. All code and materials are provided for educational and competition purposes.
+This project is part of the M1 AI Challenge course at Université Paris-Saclay. All code and materials are provided for educational and competition purposes. The competition is governed by the General ChaLearn Contest Rules and no prizes are granted.
+
+The data used in this challenge are private and may not be used outside of the scope of this competition.
