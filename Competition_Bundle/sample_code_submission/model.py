@@ -5,12 +5,18 @@
 # - predict: uses the model to perform predictions
 #
 # Created by: Ihsan Ullah
+# Updated by: [Your Name]
 # Created on: 13 Jan, 2026
+# Updated on: [Current Date]
 
 # ----------------------------------------
 # Imports
 # ----------------------------------------
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+
 # ----------------------------------------
 # Model Class
 # ----------------------------------------
@@ -29,9 +35,11 @@ class Model:
         None
         """
         print("[*] - Initializing Classifier")
-        self.clf = KNeighborsClassifier(n_neighbors=15)
-
-        
+        # Initialize scaler, PCA, and Random Forest
+        self.scaler = StandardScaler()
+        self.pca = PCA(n_components=0.95)  # Keep 95% variance
+        self.clf = RandomForestClassifier(n_estimators=200, max_depth=None, random_state=44, n_jobs=-1)
+        self.is_fitted = False
 
     def fit(self, train_data):
         """
@@ -50,16 +58,31 @@ class Model:
         print("[*] - Training Classifier on the train set")
         X = train_data["X_train"]
         y = train_data["y_train"]
-        self.clf.fit(X, y)
+        
+        print(f"[*] - Original feature shape: {X.shape}")
+        
+        # Step 1: Standardize features
+        print("[*] - Standardizing features...")
+        X_scaled = self.scaler.fit_transform(X)
+        
+        # Step 2: Apply PCA to reduce dimensionality
+        print("[*] - Applying PCA to keep 95% variance...")
+        X_pca = self.pca.fit_transform(X_scaled)
+        print(f"[*] - Reduced feature shape: {X_pca.shape}")
+        print(f"[*] - Number of components: {self.pca.n_components_}")
+        
+        # Step 3: Train Random Forest on PCA-reduced features
+        print("[*] - Training Random Forest (200 trees, max_depth=None)...")
+        self.clf.fit(X_pca, y)
+        self.is_fitted = True
 
-    def predict(self, test_data):
-
+    def predict(self, X_test):
         """
         This function predicts labels on test data.
 
         Parameters
         ----------
-        test_data: dict
+        test_data: list
             contains test data
 
         Returns
@@ -69,5 +92,21 @@ class Model:
         """
 
         print("[*] - Predicting test set using trained Classifier")
-        y = self.clf.predict(test_data["X_test"])
+        
+        if not self.is_fitted:
+            raise ValueError("Model must be fitted before prediction!")
+        
+        X = X_test['X_test']
+        print(f"[*] - Test feature shape: {X.shape}")
+        
+        # Step 1: Standardize using the same scaler from training
+        X_scaled = self.scaler.transform(X)
+        
+        # Step 2: Transform using the same PCA from training
+        X_pca = self.pca.transform(X_scaled)
+        print(f"[*] - Transformed test shape: {X_pca.shape}")
+        
+        # Step 3: Predict using trained Random Forest
+        y = self.clf.predict(X_pca)
         return y
+    
