@@ -5,9 +5,7 @@
 # - predict: uses the model to perform predictions
 #
 # Created by: Ihsan Ullah
-# Updated by: [Your Name]
 # Created on: 13 Jan, 2026
-# Updated on: [Current Date]
 
 # ----------------------------------------
 # Imports
@@ -109,4 +107,5 @@ class Model:
         # Step 3: Predict using trained Random Forest
         y = self.clf.predict(X_pca)
         return y
+
     
