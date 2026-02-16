@@ -36,7 +36,7 @@ class Model:
         # Initialize scaler, PCA, and Random Forest
         self.scaler = StandardScaler()
         self.pca = PCA(n_components=0.95)  # Keep 95% variance
-        self.clf = RandomForestClassifier(n_estimators=200, max_depth=None, random_state=44, n_jobs=-1)
+        self.clf = RandomForestClassifier(n_estimators=100, max_depth=None, random_state=44, n_jobs=-1)
         self.is_fitted = False
 
     def fit(self, train_data):
