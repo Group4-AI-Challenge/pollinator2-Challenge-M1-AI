@@ -54,6 +54,32 @@ if __name__ == "__main__":
     sys.path.append(program_dir)
     sys.path.append(submission_dir)
 
+     # Install requirements from submission (using professor's exact code)
+    def install_requirements(submission_dir):
+        """
+        Checks for requirements.txt in the submission directory and installs them.
+        """
+        requirements_path = os.path.join(submission_dir, 'requirements.txt')
+        
+        if os.path.exists(requirements_path):
+            print(f"Found requirements.txt at {requirements_path}. Installing dependencies...")
+            
+            # Construct the pip install command
+            # sys.executable ensures we use the exact same Python interpreter running the ingestion
+            cmd = [sys.executable, "-m", "pip", "install", "-r", requirements_path]
+            
+            try:
+                # Run the installation, capturing output helps with debugging logs
+                subprocess.check_call(cmd)
+                print("Dependencies installed successfully.")
+            except subprocess.CalledProcessError as e:
+                print(f"CRITICAL WARNING: Failed to install dependencies from requirements.txt. Error: {e}")
+                # You can choose to sys.exit(1) here if you want to fail the submission immediately
+        else:
+            print("No requirements.txt found. Skipping dependency installation.")
+    
+    install_requirements(submission_dir)
+
     from model import Model
 
     # Initialize Ingestions
